@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\MailRemoverAPI",
+    "\\MailRemoverAPI\\MailRemoverAPI",
+    "\\MailRemoverAPI\\MailRemoverAPI\\Util"
   ],
+  "SelectedNode": "\\MailRemoverAPI\\MailRemoverAPI\\Util\\FileReadClass.cs",
   "PreviewInSolutionExplorer": false
 }
