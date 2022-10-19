@@ -1,5 +1,6 @@
 ﻿using MailRemoverAPI.Entities;
 using MailRemoverAPI.Interfaces;
+using MailRemoverAPI.Models.Email;
 using MailRemoverAPI.Validators.Email;
 using Microsoft.AspNetCore.Mvc;
 
@@ -31,7 +32,14 @@ namespace MailRemoverAPI.Controllers
                 return BadRequest();
             }
 
-            return Ok(result);
+            EmailDTO emailDTO = new EmailDTO(){
+               Id = result.Id,
+               UserId = result.UserId,
+               Token = result.Token,
+               Type = result.Type,
+            };
+
+            return Ok(emailDTO);
         }
 
         [HttpPost]
