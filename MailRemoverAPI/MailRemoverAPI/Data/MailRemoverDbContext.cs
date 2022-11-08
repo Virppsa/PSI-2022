@@ -52,7 +52,6 @@ namespace MailRemoverAPI.Data
                 }
                 );
 
-
             modelBuilder.Entity<Email>().HasData(
                 new Email
                 {

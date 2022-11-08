@@ -20,6 +20,7 @@ namespace MailRemoverAPI.Controllers
             {
                 result.Sort();
             }
+
             return Ok(result);
         }
 
@@ -28,7 +29,7 @@ namespace MailRemoverAPI.Controllers
         {
             var result = await _userRepository.GetByIdAsync(Id);
 
-            if(result is null)
+            if (result is null)
             {
                 return BadRequest();
             }

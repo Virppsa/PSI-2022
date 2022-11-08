@@ -21,7 +21,6 @@ namespace MailRemoverAPI.Entities
             }
         }
 
-
         public virtual IList<Email>? Emails { get; set; }
 
         public int CompareTo(User? other)

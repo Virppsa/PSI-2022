@@ -8,6 +8,6 @@ namespace MailRemoverAPI.Interfaces
 
         public Task<long?> ToGrams(int Mb);
 
-        public short Co2toKg(int Mb);
+        public double Co2toKg(int Mb);
     }
 }

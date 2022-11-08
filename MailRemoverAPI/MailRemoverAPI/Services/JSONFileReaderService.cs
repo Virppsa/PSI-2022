@@ -16,7 +16,6 @@ namespace MailRemoverAPI.Services
         public async Task<List<T>> ReadAll<T>()
             where T : Entity
         {
-
             var filePath = Directory.GetCurrentDirectory() + _configuration["JSONFilesLocation"] + GetEntityFileName<T>();
 
             Console.WriteLine(filePath);
@@ -39,7 +38,7 @@ namespace MailRemoverAPI.Services
             var entityType = typeof(T).ToString().Split(".")[2];
             var filename = _configuration[$"JSONFileNames:{entityType}"];
 
-            if(filename == null)
+            if (filename == null)
             {
                 throw new FileNotFoundException($"There is no JSON filename in enviroment settings as {entityType}.json");
             }

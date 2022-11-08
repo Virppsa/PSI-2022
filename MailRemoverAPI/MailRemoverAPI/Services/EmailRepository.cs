@@ -3,7 +3,7 @@ using MailRemoverAPI.Interfaces;
 
 namespace MailRemoverAPI.Services
 {
-    public class EmailRepository : IEmailRepository
+    public class EmailRepository
     {
         private IJSONFileReaderService _jsonFileReaderService;
 
@@ -33,22 +33,5 @@ namespace MailRemoverAPI.Services
 
             return email;
         }
-
-        public short Co2toKg(int Mb)
-        {
-            short calculated = (short)(Mb * 0.019);
-            return calculated;
-        }
-
-        public async Task<long?> ToGrams(int Mb)
-        {
-            return (long)(this.Co2toKg(Mb) * 1000000);
-        }
-
-        public async Task<double?> ToTonns(int Mb)
-        {
-            return (double)(this.Co2toKg(Mb) / 1000000);
-        }
-
     }
 }

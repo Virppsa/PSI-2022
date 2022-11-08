@@ -17,7 +17,6 @@
         {
             return (double)(this.Co2toKg(Mb) / 1000000);
         }
-
     }
 }
 

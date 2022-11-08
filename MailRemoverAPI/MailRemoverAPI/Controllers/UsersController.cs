@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MailRemoverAPI.Entities;
 using MailRemoverAPI.Models.User;
 using AutoMapper;
 using MailRemoverAPI.Data;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 
 namespace MailRemoverAPI.Controllers
 {
@@ -34,6 +28,7 @@ namespace MailRemoverAPI.Controllers
             var queryedUsers = from user in _context.Users
                                where user.FirstName.Contains(firstName)
                                select user;
+
             return Ok(queryedUsers);
         }
 
@@ -102,23 +97,23 @@ namespace MailRemoverAPI.Controllers
         {
             var user = await _context.Users.FindAsync(id);
 
-            if(user == null)
+            if (user == null)
             {
                 return NotFound();
-            } else
+            }
+            else
             {
                 var result = user.CheckPassword(Password);
-                if(result == false)
+                if (result == false)
                 {
                     return Ok("Wrong Password");
-                } else
+                }
+                else
                 {
                     return Ok(user);
                 }
             }
         }
-
-
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
